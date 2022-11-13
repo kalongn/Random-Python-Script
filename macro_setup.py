@@ -2,11 +2,19 @@
 import time, pyautogui
 
 time.sleep() #seconds, use for waiting for stuff to load
+screenWidth, screenHeight = pyautogui.size() # Returns two integers, the width and height of the screen. (The primary monitor, in multi-monitor setups.)
+currentMouseX, currentMouseY = pyautogui.position() # Returns two integers, the x and y of the mouse cursor's current position.
+pyautogui.moveTo(100, 150) # Move the mouse to the x, y coordinates 100, 150.
+pyautogui.click() # Click the mouse at its current location.
+pyautogui.click(200, 220) # Click the mouse at the x, y coordinates 200, 220.
+pyautogui.move(None, 10)  # Move mouse 10 pixels down, that is, move the mouse relative to its current position.
+pyautogui.doubleClick() # Double click the mouse at the
+pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad) # Use tweening/easing function to move mouse over 2 seconds.
+pyautogui.write('Hello world!', interval=0.25)  # Type with quarter-second pause in between each key.
+pyautogui.press('esc') # Simulate pressing the Escape key.
+pyautogui.keyDown('shift') # Simulate holding down Shift key.
+pyautogui.write(['left', 'left', 'left', 'left', 'left', 'left']) 
+pyautogui.keyUp('shift') # Simulate no longer holding down Shift key.
+pyautogui.hotkey('ctrl', 'c') #Simulate a hot key presses, in this case it is copy.
 
-pyautogui.click() #mouseclick
-x,y = 0
-pyautogui.click(x,y) #mouseclick on screen at location x,y
-print(pyautogui.position()) #console pring where the mouse pointer is at
-
-pyautogui.typewrite('<INPUT>') #type the following String for you
-pyautogui.press('KEYS') #press the following keys on your keyboard for you
+#more detail for pyautogui: https://pypi.org/project/PyAutoGUI/
