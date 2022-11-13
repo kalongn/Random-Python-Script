@@ -1,3 +1,4 @@
+#make sure you have pytube install (pip install pytube)
 import pytube
 
 def main():
